@@ -2,11 +2,12 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/fireba
 import { 
     getFirestore, 
     collection, 
-    addDoc, 
-    serverTimestamp 
+    getDocs, 
+    query, 
+    where 
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-// ✅ بيانات مشروعك الحقيقية
+// ⚠️ بيانات Firebase الخاصة بك
 const firebaseConfig = {
   apiKey: "AIzaSyC5UjzMRr9BOBtuBIbI6sThWtv3BI0HPzo",
   authDomain: "feedbacksoftskils.firebaseapp.com",
@@ -16,9 +17,8 @@ const firebaseConfig = {
   appId: "1:347396669754:web:54344c7c874b7cdb11d003"
 };
 
-// تهيئة Firebase
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app); // هذا هو المتغير الذي سنستخدمه للحفظ والقراءة
+const db = getFirestore(app);
 
 const SESSION_NAMES = {
     'session1': 'محاضرة: دور المهارات الناعمة في بناء الشخصية - أ. اسكندر زينب',
