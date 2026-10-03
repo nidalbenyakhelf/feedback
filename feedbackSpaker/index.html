@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نتائج الجلسة - ملتقى المهارات الناعمة</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="deco deco-1"><i class="fa-solid fa-graduation-cap"></i></div>
+    <div class="deco deco-2"><i class="fa-solid fa-award"></i></div>
+
+    <div class="container py-5">
+        <div class="header text-center mb-5">
+            <span class="header-badge">
+                <i class="fa-solid fa-chart-line me-2"></i> تقرير نتائج الجلسة
+            </span>
+            <h1 class="display-5 fw-black mt-3" id="sessionTitle">جاري التحميل...</h1>
+            <p class="lead text-muted mt-2">ملتقى المهارات الناعمة - تقرير التغذية الراجعة</p>
+        </div>
+
+        <div id="loadingState" class="card-custom active text-center">
+            <i class="fa-solid fa-spinner fa-spin fa-3x"></i>
+            <p class="mt-3 fw-bold">جاري تحميل النتائج...</p>
+        </div>
+
+        <div id="content" style="display: none;">
+            <div class="section-title">
+                <span class="icon-box"><i class="fa-solid fa-file-lines"></i></span>
+                ملخص الجلسة
+            </div>
+            <div class="executive-summary card-custom active mb-4" id="sessionSummary"></div>
+
+            <div class="section-title">
+                <span class="icon-box"><i class="fa-solid fa-star"></i></span>
+                التقييم التفصيلي
+            </div>
+            <div class="card-custom active mb-4" id="detailedRating"></div>
+
+            <div class="section-title">
+                <span class="icon-box"><i class="fa-solid fa-comments"></i></span>
+                ملاحظات الحضور عن الجلسة
+            </div>
+            <div id="feedbackList"></div>
+
+            <div class="text-center mt-5 mb-3">
+                <small class="text-muted">
+                    <i class="fa-solid fa-lock me-1"></i> 
+                    هذا التقرير سري ومخصص للأستاذ/ة فقط
+                </small>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="js/script.js"></script>
+</body>
+</html>

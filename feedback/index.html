@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ملتقى المهارات الناعمة - التغذية الراجعة</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="deco deco-1"><i class="fa-solid fa-sparkles"></i></div>
+    <div class="deco deco-2"><i class="fa-solid fa-cloud"></i></div>
+    <div class="deco deco-3"><i class="fa-solid fa-star"></i></div>
+    <div class="deco deco-4"><i class="fa-solid fa-heart"></i></div>
+
+    <div class="container py-5">
+        <div class="header text-center mb-5">
+            <span class="header-badge">
+                <i class="fa-solid fa-star me-2"></i> ملتقى المهارات الناعمة
+            </span>
+            <h1 class="display-5 fw-black mt-3">رأيك <span class="text-pink">يهمنا</span></h1>
+            <p class="lead text-muted mt-2">
+                <i class="fa-solid fa-shield-halved me-1"></i> 
+                استبيان مجهول الهوية. نعدك بأن كل ملاحظة ستُقرأ بعناية لتطوير أنفسنا.
+            </p>
+        </div>
+
+        <div class="card-custom active">
+            <form id="feedbackForm">
+                
+                <div class="section-title">
+                    <span class="icon-box"><i class="fa-solid fa-user"></i></span>
+                    معلوماتك (اختياري)
+                </div>
+                
+                <div class="mb-4">
+                    <label class="form-label fw-bold">الاسم (يمكن تركه فارغاً)</label>
+                    <input type="text" id="name" class="form-control-custom" placeholder="اكتب اسمك هنا...">
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label fw-bold">صفتك</label>
+                    <div class="radio-group-custom">
+                        <div class="radio-option">
+                            <input type="radio" id="role1" name="role" value="طالب" required>
+                            <label for="role1"><i class="fa-solid fa-graduation-cap me-2"></i> طالب/ة</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="role2" name="role" value="أستاذ">
+                            <label for="role2"><i class="fa-solid fa-chalkboard-user me-2"></i> أستاذ/ة</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="role3" name="role" value="ضيف">
+                            <label for="role3"><i class="fa-solid fa-user-group me-2"></i> ضيف</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-title">
+                    <span class="icon-box"><i class="fa-solid fa-bullhorn"></i></span>
+                    التقييم العام (NPS)
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label fw-bold">ما مدى احتمالية أن توصي بهذا الملتقى لصديق أو زميل؟</label>
+                    <div class="nps-container" id="npsRating">
+                        <button type="button" class="nps-btn" data-value="0">0</button>
+                        <button type="button" class="nps-btn" data-value="1">1</button>
+                        <button type="button" class="nps-btn" data-value="2">2</button>
+                        <button type="button" class="nps-btn" data-value="3">3</button>
+                        <button type="button" class="nps-btn" data-value="4">4</button>
+                        <button type="button" class="nps-btn" data-value="5">5</button>
+                        <button type="button" class="nps-btn" data-value="6">6</button>
+                        <button type="button" class="nps-btn" data-value="7">7</button>
+                        <button type="button" class="nps-btn" data-value="8">8</button>
+                        <button type="button" class="nps-btn" data-value="9">9</button>
+                        <button type="button" class="nps-btn" data-value="10">10</button>
+                    </div>
+                    <div class="nps-label mt-2 fw-bold" id="npsLabel"></div>
+                    <small class="text-muted d-block mt-1">
+                        <span class="text-danger fw-bold">0-6</span> = لن أوصي به | 
+                        <span class="text-warning fw-bold">7-8</span> = ربما | 
+                        <span class="text-success fw-bold">9-10</span> = سأوصي به بشدة
+                    </small>
+                </div>
+
+                <div class="section-title">
+                    <span class="icon-box"><i class="fa-solid fa-chalkboard-user"></i></span>
+                    تقييم جلسة محددة (اختياري)
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label fw-bold">هل ترغب في تقييم محاضرة أو ورشة معينة حضرتها؟</label>
+                    <select id="sessionSelect" class="form-control-custom mb-3">
+                        <option value="" disabled selected>-- اختر الجلسة من القائمة --</option>
+                        <option value="session1">محاضرة: دور المهارات الناعمة في بناء الشخصية - أ. اسكندر زينب</option>
+                        <option value="session2">ورشة: التسويق الإلكتروني والاتصال الفعال - أ. أحمد بن عدة</option>
+                        <option value="session3">ورشة إلكترونية: براندينغ وبناء الهوية الشخصية الاحترافية - أ. عمراوي عبد الوحيد</option>
+                        <option value="session4">ورشة: فن اتخاذ القرار - أ. عبد الخالق بن بحة</option>
+                        <option value="session5">ورشة: التخطيط الاستراتيجي - أ. وعراب محمد</option>
+                        <option value="session6">ورشة إلكترونية: ذكاء الاصطناعي وهندسة الأوامر - أ. طيبي عبد الجليل</option>
+                        <option value="session7">ورشة: التخطيط الاستراتيجي لإدارة الفعاليات غير الربحية - أ. محمد إسلام تكدونتي</option>
+                        <option value="session8">ورشة: حول إدارة الضغط النفسي</option>
+                        <option value="session9">ورشة: فن الإلقاء والخطابة - أ. عمر يخلف</option>
+                        <option value="other">أخرى (يرجى التحديد في الملاحظات)</option>
+                    </select>
+                    
+                    <div id="sessionFeedback" style="display: none;">
+                        <label class="form-label fw-bold">تقييمك لهذه الجلسة المحددة</label>
+                        <div class="rating-container mb-3" id="sessionRating">
+                            <i class="fa-regular fa-star star" data-value="5"></i>
+                            <i class="fa-regular fa-star star" data-value="4"></i>
+                            <i class="fa-regular fa-star star" data-value="3"></i>
+                            <i class="fa-regular fa-star star" data-value="2"></i>
+                            <i class="fa-regular fa-star star" data-value="1"></i>
+                        </div>
+                        <label class="form-label fw-bold">ما رأيك في محتوى الجلسة وأسلوب المتحدث؟</label>
+                        <textarea id="speakerFeedback" class="form-control-custom" rows="2" placeholder="اكتب ملاحظتك عن المتحدث والمحتوى هنا..."></textarea>
+                    </div>
+                </div>
+
+                <div class="section-title">
+                    <span class="icon-box"><i class="fa-solid fa-gears"></i></span>
+                    التنظيم واللوجستيات
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label fw-bold">كيف تقيم تنظيم الحدث (التوقيت، الاستضافة، وضوح الجدول)؟</label>
+                    <div class="rating-container" id="logisticsRating">
+                        <i class="fa-regular fa-star star" data-value="5"></i>
+                        <i class="fa-regular fa-star star" data-value="4"></i>
+                        <i class="fa-regular fa-star star" data-value="3"></i>
+                        <i class="fa-regular fa-star star" data-value="2"></i>
+                        <i class="fa-regular fa-star star" data-value="1"></i>
+                    </div>
+                </div>
+
+                <div class="section-title">
+                    <span class="icon-box"><i class="fa-solid fa-lightbulb"></i></span>
+                    ملاحظاتك واقتراحاتك
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label fw-bold"><i class="fa-solid fa-circle-check text-success me-2"></i> نقاط القوة (ما أعجبك)</label>
+                    <textarea id="strengths" class="form-control-custom" rows="2" placeholder="ما الذي أعجبك في الملتقى؟"></textarea>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label fw-bold"><i class="fa-solid fa-triangle-exclamation text-warning me-2"></i> نقاط الضعف (ما يحتاج تحسين)</label>
+                    <textarea id="weaknesses" class="form-control-custom" rows="2" placeholder="ما الذي نحتاج تحسينه؟"></textarea>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label fw-bold"><i class="fa-solid fa-gem text-primary me-2"></i> اقتراحاتك للنسخ القادمة</label>
+                    <textarea id="suggestions" class="form-control-custom" rows="2" placeholder="ما الذي تتمنى إضافته؟"></textarea>
+                </div>
+
+                <div class="section-title">
+                    <span class="icon-box"><i class="fa-solid fa-envelope-open-text"></i></span>
+                    رسائل مخصصة (اختياري)
+                </div>
+
+                <div class="row g-3 mb-4">
+                    <div class="col-md-6">
+                        <label class="form-label fw-bold">
+                            <i class="fa-solid fa-chalkboard-user text-primary me-2"></i> رسالة للأساتذة/المدربين
+                        </label>
+                        <textarea id="messageToSpeakers" class="form-control-custom" rows="3" placeholder="شكر، اقتراح للمحتوى، أو ملاحظة حول أسلوب العرض..."></textarea>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label fw-bold">
+                            <i class="fa-solid fa-users-gear text-success me-2"></i> رسالة لفريق التنظيم
+                        </label>
+                        <textarea id="messageToOrganizers" class="form-control-custom" rows="3" placeholder="ملاحظة حول المكان، التوقيت، الاستضافة، أو أي خدمة لوجستية..."></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn w-100" id="submitBtn">
+                    <i class="fa-solid fa-paper-plane me-2"></i> إرسال التغذية الراجعة
+                </button>
+            </form>
+        </div>
+
+        <div class="text-center mt-4">
+            <small class="text-muted">
+                <i class="fa-solid fa-lock me-1"></i> 
+                بياناتك آمنة ومحمية
+            </small>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="js/script.js"></script>
+</body>
+</html>
